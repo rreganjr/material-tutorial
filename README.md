@@ -1,4 +1,9 @@
 # MaterialTutorial
+This code is based on the tutorial https://www.tutorialspoint.com/angular_material7/
+
+thanks for this answer, the autocomplete was missing generating the filteredStates list, the valueChanges.subscribe()
+and the filterValues() function.
+https://stackoverflow.com/questions/48337188/angular-material-autocomplete-not-working-no-errors-shown
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 

@@ -3,19 +3,100 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+  <form class="tp-form">
+    <h2 class="tp-h2">AutoComplete Select</h2>
+    <p>This control gives you an autocomplete list as you type in a US State name. For example type 'M' and the list shows
+      the states that start with 'M'. Then type 'A' and see that the list is filtered to states that start with 'MA'
+    </p>
+    <mat-form-field class="tp-full-width">
+       <input type="text"
+          placeholder="US State"
+          aria-label="US State"
+          matInput
+          [formControl]="autoCompleteStateInput"
+          [matAutocomplete]="auto">
+       <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let state of filteredStates" [value]="state.value">
+             {{state.display}}
+          </mat-option>
+       </mat-autocomplete>
+    </mat-form-field>
+    <h2 class="tp-h2">Date Chooser</h2>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateInput)="dateChanged($event)"
+          (dateChange)="dateChanged($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi=false #picker></mat-datepicker>
+     </mat-form-field>
+     <div class = "tp-container">
+        <mat-form-field appearance="standard">
+           <input matInput placeholder="Input">
+           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+           <mat-hint>This is a hint for the input</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance = "fill">
+           <textarea matInput placeholder = "Textarea"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance = "outline">
+           <mat-select placeholder = "Select">
+              <mat-option value="A"><mat-icon matSuffix>sentiment_very_satisfied</mat-icon></mat-option>
+              <mat-option value="B"><mat-icon matSuffix>sentiment_neutral</mat-icon></mat-option>
+              <mat-option value="C"><mat-icon matSuffix>sentiment_very_dissatisfied</mat-icon></mat-option>
+           </mat-select>
+        </mat-form-field>
+     </div>
+     <mat-form-field class="tp-full-width">
+        <input type="color" matInput placeholder="Favorite Color" value="#fff">
+     </mat-form-field>
+     <mat-form-field class="tp-full-width">
+        <input type="time" matInput placeholder="Time" value="10:00 AM">
+     </mat-form-field>
+     <mat-form-field class="tp-full-width">
+        <textarea matInput placeholder="Enter your comment"></textarea>
+     </mat-form-field>
+     <mat-form-field class="tp-full-width">
+        <input matInput placeholder="Email" [formControl]="emailFormControl">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+           Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+           Email is <strong>required</strong>
+        </mat-error>
+     </mat-form-field>
+ </form>
+ <p>Selected Date: {{saveTheDate}}</p>
+
+ <h2 class="tp-h2">Checkbox configuration</h2>
+
+ <section class="tp-section">
+     <mat-checkbox class="tp-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+     <mat-checkbox class="tp-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+ </section>
+ <section class="tp-section">
+       <mat-checkbox class="tp-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+ </section>
+   <h2 class="tp-h2">Result</h2>
+   <section class="tp-section">
+       <mat-checkbox
+         class="tp-margin"
+         [(ngModel)]="checked"
+         [(indeterminate)]="indeterminate"
+         [labelPosition]="labelPosition"
+         [disabled]="disabled">
+         Sample Checkbox
+     </mat-checkbox>
+   </section>
+
+   <h2>Radio Buttons</h2>
+   <mat-radio-group class = "tp-radio-group" [(ngModel)] = "favoriteSeason">
+      <mat-radio-button class = "tp-radio-button"
+         *ngFor = "let season of seasons" [value] = "season">
+         {{season}}
+      </mat-radio-button>
+   </mat-radio-group>
+   <div class = "tp-selected-value">
+      Selected Season: {{favoriteSeason}}
+   </div>
 
 <router-outlet></router-outlet>

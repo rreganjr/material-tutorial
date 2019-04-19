@@ -9,11 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { BypassPanelComponent } from './bypass-panel/bypass-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopNavComponent
+    TopNavComponent,
+    BypassPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -12,4 +12,12 @@ export class BypassPanelComponent implements OnInit {
   ngOnInit() {
   }
 
+  slideRight = () =>  {
+      document.querySelector('container').classList.add('right-panel-active');
+  }
+
+  slideLeft = () => {
+    document.querySelector('container').classList.remove('right-panel-active');
+  }
+
 }

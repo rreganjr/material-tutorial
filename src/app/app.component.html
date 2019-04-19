@@ -1,102 +1,122 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="mat-app-background">
+    <mat-toolbar color="primary">
+        <span>material-tutorial</span>
+      </mat-toolbar>
 
-  <form class="tp-form">
-    <h2 class="tp-h2">AutoComplete Select</h2>
-    <p>This control gives you an autocomplete list as you type in a US State name. For example type 'M' and the list shows
-      the states that start with 'M'. Then type 'A' and see that the list is filtered to states that start with 'MA'
-    </p>
-    <mat-form-field class="tp-full-width">
-       <input type="text"
-          placeholder="US State"
-          aria-label="US State"
-          matInput
-          [formControl]="autoCompleteStateInput"
-          [matAutocomplete]="auto">
-       <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let state of filteredStates" [value]="state.value">
-             {{state.display}}
-          </mat-option>
-       </mat-autocomplete>
-    </mat-form-field>
-    <h2 class="tp-h2">Date Chooser</h2>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateInput)="dateChanged($event)"
-          (dateChange)="dateChanged($event)">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi=false #picker></mat-datepicker>
-     </mat-form-field>
-     <div class = "tp-container">
-        <mat-form-field appearance="standard">
-           <input matInput placeholder="Input">
-           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-           <mat-hint>This is a hint for the input</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance = "fill">
-           <textarea matInput placeholder = "Textarea"></textarea>
-        </mat-form-field>
-        <mat-form-field appearance = "outline">
-           <mat-select placeholder = "Select">
-              <mat-option value="A"><mat-icon matSuffix>sentiment_very_satisfied</mat-icon></mat-option>
-              <mat-option value="B"><mat-icon matSuffix>sentiment_neutral</mat-icon></mat-option>
-              <mat-option value="C"><mat-icon matSuffix>sentiment_very_dissatisfied</mat-icon></mat-option>
-           </mat-select>
-        </mat-form-field>
-     </div>
-     <mat-form-field class="tp-full-width">
-        <input type="color" matInput placeholder="Favorite Color" value="#fff">
-     </mat-form-field>
-     <mat-form-field class="tp-full-width">
-        <input type="time" matInput placeholder="Time" value="10:00 AM">
-     </mat-form-field>
-     <mat-form-field class="tp-full-width">
-        <textarea matInput placeholder="Enter your comment"></textarea>
-     </mat-form-field>
-     <mat-form-field class="tp-full-width">
-        <input matInput placeholder="Email" [formControl]="emailFormControl">
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-           Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-           Email is <strong>required</strong>
-        </mat-error>
-     </mat-form-field>
- </form>
- <p>Selected Date: {{saveTheDate}}</p>
+  <app-top-nav>
+      <h1>
+          Welcome to {{ title }}!
+        </h1>
 
- <h2 class="tp-h2">Checkbox configuration</h2>
+        <form class="tp-form">
+          <h2 class="tp-h2">AutoComplete Select</h2>
+          <p>This control gives you an autocomplete list as you type in a US State name. For example type 'M' and the list shows
+            the states that start with 'M'. Then type 'A' and see that the list is filtered to states that start with 'MA'
+          </p>
+          <mat-form-field class="tp-full-width">
+             <input type="text"
+                placeholder="US State"
+                aria-label="US State"
+                matInput
+                [formControl]="autoCompleteStateInput"
+                [matAutocomplete]="auto">
+             <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let state of filteredStates" [value]="state.value">
+                   {{state.display}}
+                </mat-option>
+             </mat-autocomplete>
+          </mat-form-field>
+          <h2 class="tp-h2">Date Chooser</h2>
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateInput)="dateChanged($event)"
+                (dateChange)="dateChanged($event)">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi=false #picker></mat-datepicker>
+           </mat-form-field>
+           <div class = "tp-container">
+              <mat-form-field appearance="standard">
+                 <input matInput placeholder="Input">
+                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                 <mat-hint>This is a hint for the input</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance = "fill">
+                 <textarea matInput placeholder = "Textarea"></textarea>
+              </mat-form-field>
+              <mat-form-field appearance = "outline">
+                 <mat-select placeholder = "Select">
+                    <mat-option value="A"><mat-icon matSuffix>sentiment_very_satisfied</mat-icon></mat-option>
+                    <mat-option value="B"><mat-icon matSuffix>sentiment_neutral</mat-icon></mat-option>
+                    <mat-option value="C"><mat-icon matSuffix>sentiment_very_dissatisfied</mat-icon></mat-option>
+                 </mat-select>
+              </mat-form-field>
+           </div>
+           <mat-form-field class="tp-full-width">
+              <input type="color" matInput placeholder="Favorite Color" value="#fff">
+           </mat-form-field>
+           <mat-form-field class="tp-full-width">
+              <input type="time" matInput placeholder="Time" value="10:00 AM">
+           </mat-form-field>
+           <mat-form-field class="tp-full-width">
+              <textarea matInput placeholder="Enter your comment"></textarea>
+           </mat-form-field>
+           <mat-form-field class="tp-full-width">
+              <input matInput placeholder="Email" [formControl]="emailFormControl">
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                 Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                 Email is <strong>required</strong>
+              </mat-error>
+           </mat-form-field>
 
- <section class="tp-section">
-     <mat-checkbox class="tp-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-     <mat-checkbox class="tp-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
- </section>
- <section class="tp-section">
-       <mat-checkbox class="tp-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
- </section>
-   <h2 class="tp-h2">Result</h2>
-   <section class="tp-section">
-       <mat-checkbox
-         class="tp-margin"
-         [(ngModel)]="checked"
-         [(indeterminate)]="indeterminate"
-         [labelPosition]="labelPosition"
-         [disabled]="disabled">
-         Sample Checkbox
-     </mat-checkbox>
-   </section>
+           <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" mdbInput>
+              <label class="custom-control-label" for="defaultUnchecked">Default unchecked</label>
+            </div>
 
-   <h2>Radio Buttons</h2>
-   <mat-radio-group class = "tp-radio-group" [(ngModel)] = "favoriteSeason">
-      <mat-radio-button class = "tp-radio-button"
-         *ngFor = "let season of seasons" [value] = "season">
-         {{season}}
-      </mat-radio-button>
-   </mat-radio-group>
-   <div class = "tp-selected-value">
-      Selected Season: {{favoriteSeason}}
-   </div>
+           <mat-list #groceries>
+              <h3 mat-subheader>Groceries</h3>
+
+              <mat-list-item checkboxPosition="before" value="bananas">Bananas</mat-list-item>
+              <mat-list-item checkboxPosition="before" selected value="oranges">Oranges</mat-list-item>
+              <mat-list-item checkboxPosition="before" value="apples">Apples</mat-list-item>
+              <mat-list-item checkboxPosition="before" value="strawberries">Strawberries</mat-list-item>
+            </mat-list>
+          </form>
+       <p>Selected Date: {{saveTheDate}}</p>
+
+       <h2 class="tp-h2">Checkbox configuration</h2>
+       <section class="tp-section">
+           <mat-checkbox class="tp-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+           <mat-checkbox class="tp-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+       </section>
+       <section class="tp-section">
+             <mat-checkbox class="tp-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+       </section>
+         <h2 class="tp-h2">Result</h2>
+         <section class="tp-section">
+             <mat-checkbox
+               class="tp-margin"
+               [(ngModel)]="checked"
+               [(indeterminate)]="indeterminate"
+               [labelPosition]="labelPosition"
+               [disabled]="disabled">
+               Sample Checkbox
+           </mat-checkbox>
+         </section>
+
+         <h2>Radio Buttons</h2>
+         <mat-radio-group class = "tp-radio-group" [(ngModel)] = "favoriteSeason">
+            <mat-radio-button class = "tp-radio-button"
+               *ngFor = "let season of seasons" [value] = "season">
+               {{season}}
+            </mat-radio-button>
+         </mat-radio-group>
+         <div class = "tp-selected-value">
+            Selected Season: {{favoriteSeason}}
+         </div>
+  </app-top-nav>
+
 
 <router-outlet></router-outlet>

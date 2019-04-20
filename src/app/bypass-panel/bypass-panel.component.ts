@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bypass-panel',
@@ -7,17 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BypassPanelComponent implements OnInit {
 
+  @Input() rightPanelActive: boolean;
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  slideRight = () =>  {
-      document.querySelector('container').classList.add('right-panel-active');
-  }
-
-  slideLeft = () => {
-    document.querySelector('container').classList.remove('right-panel-active');
-  }
-
 }

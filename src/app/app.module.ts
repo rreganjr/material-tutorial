@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BypassPanelComponent } from './bypass-panel/bypass-panel.component';
+import { SignUpOrInComponent } from './sign-up-or-in/sign-up-or-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    BypassPanelComponent
+    BypassPanelComponent,
+    SignUpOrInComponent
   ],
   imports: [
     BrowserModule,

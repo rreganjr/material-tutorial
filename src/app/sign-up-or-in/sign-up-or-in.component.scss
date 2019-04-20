@@ -59,10 +59,18 @@ button.ghost {
 .form-container {
   top: 0;
   height: 100%;
-  min-width: 200px;
-  transition: all 0.6s ease-in-out;
 }
 
+.message-container {
+  top: 0;
+  height: 50%;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	text-align: center;
+}
 
 form {
 	background-color: #FFFFFF;
@@ -96,4 +104,14 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+}
+
+// see http://anasfirdousi.com/component-style-isolation-and-ng-content-in-angular.html
+:host /deep/ .overlay {
+  background: #1565C0;
+	background: -webkit-linear-gradient(to right, #b92b27, #1565C0);
+	background: linear-gradient(to right, #b92b27, #1565C0);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
 }

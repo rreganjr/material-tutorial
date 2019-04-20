@@ -50,12 +50,6 @@
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
 	color: #FFFFFF;
 	position: relative;
 	left: -100%;
@@ -85,18 +79,20 @@
 }
 
 .overlay-left {
-	transform: translateX(-20%);
+  left: 0;
+  padding: 0;
+	transform: translateX(-10%);
 }
 
 .overlay-left.right-panel-active {
-	transform: translateX(0);
+	transform: translateX(0%);
 }
 
 .overlay-right {
-	right: 0;
-	transform: translateX(0);
+  left: 50%;
+  padding: 0;
 }
 
 .overlay-right.right-panel-active {
-	transform: translateX(20%);
+	transform: translateX(10%);
 }

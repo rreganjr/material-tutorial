@@ -11,7 +11,7 @@
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button class="sign-in">Sign In</button>
           </form>
     </div>
 
@@ -27,20 +27,20 @@
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <button class="sign-up">Sign Up</button>
           </form>
     </div>
 
     <div class="overlay-left-content message-container">
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp" (click)="rightPanelActive=false">Sign In</button>
+				<button class="ghost" id="signUp" (click)="rightPanelActive=false">Goto Sign In</button>
 		</div>
 
     <div class="overlay-right-content message-container">
         <h1>Welcome Back!</h1>
         <p>To keep connected with us please login with your personal info</p>
-      <button class="ghost" id="signIn" (click)="rightPanelActive=true">Sign Up</button>
+      <button class="ghost" id="signIn" (click)="rightPanelActive=true">Goto Sign Up</button>
     </div>
 
   </app-bypass-panel>

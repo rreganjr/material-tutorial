@@ -32,8 +32,6 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -47,6 +45,17 @@ button:active {
 	transform: scale(0.95);
 }
 
+button.sign-up {
+	border: 1px solid #1565C0;
+	background-color: #b92b27;
+}
+
+button.sign-in {
+	border: 1px solid #b92b27;
+	background-color: #1565C0;
+}
+
+
 button:focus {
 	outline: none;
 }
@@ -59,6 +68,7 @@ button.ghost {
 .form-container {
   top: 0;
   height: 100%;
+  padding-top: 20px;
 }
 
 .message-container {

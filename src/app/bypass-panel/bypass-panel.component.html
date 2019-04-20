@@ -1,17 +1,17 @@
-<div [ngClass]="{'container': true, 'right-panel-active': rightPanelActive}">
-	<div class="left-panel">
-        <ng-content select=".left-panel-content"></ng-content>
-    </div>
-	<div class="right-panel">
-        <ng-content select=".right-panel-content"></ng-content>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-right">
-                <ng-content select=".overlay-right-content"></ng-content>
-            </div>
-            <div class="overlay-panel overlay-left">
-                <ng-content select=".overlay-left-content"></ng-content>
+<div class="container">
+  <div [ngClass]="{'left-panel': true, 'right-panel-active': rightPanelActive}">
+    <ng-content select=".left-panel-content"></ng-content>
+  </div>
+  <div [ngClass]="{'right-panel': true, 'right-panel-active': rightPanelActive}">
+    <ng-content select=".right-panel-content"></ng-content>
+  </div>
+	<div [ngClass]="{'overlay-container': true, 'right-panel-active': rightPanelActive}">
+		<div [ngClass]="{'overlay': true, 'right-panel-active': rightPanelActive}">
+			<div [ngClass]="{'overlay-panel': true, 'overlay-right': true, 'right-panel-active': rightPanelActive}">
+        <ng-content select=".overlay-right-content"></ng-content>
+      </div>
+      <div [ngClass]="{'overlay-panel': true, 'overlay-left': true, 'right-panel-active': rightPanelActive}">
+        <ng-content select=".overlay-left-content"></ng-content>
 			</div>
 		</div>
 	</div>

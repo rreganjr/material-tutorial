@@ -8,8 +8,8 @@ import {BypassPanelComponent} from '../bypass-panel/bypass-panel.component';
 })
 export class SignUpOrInComponent implements OnInit {
 
-  rightPanelActive : boolean = false;
-  
+  rightPanelActive: boolean = false;
+
   constructor() {
    }
 

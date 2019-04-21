@@ -117,7 +117,8 @@ input {
 }
 
 // see http://anasfirdousi.com/component-style-isolation-and-ng-content-in-angular.html
-:host /deep/ .overlay {
+// damn, this is deprecated https://angular.io/guide/component-styles#deprecated-deep--and-ng-deep
+:host ::ng-deep .overlay {
   background: #1565C0;
 	background: -webkit-linear-gradient(to right, #b92b27, #1565C0);
 	background: linear-gradient(to right, #b92b27, #1565C0);

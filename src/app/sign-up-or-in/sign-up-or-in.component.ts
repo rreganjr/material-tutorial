@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {BypassPanelComponent} from '../bypass-panel/bypass-panel.component';
 
 @Component({
   selector: 'app-sign-up-or-in',

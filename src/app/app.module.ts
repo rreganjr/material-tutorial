@@ -9,14 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { BypassPanelComponent } from './bypass-panel/bypass-panel.component';
 import { SignUpOrInComponent } from './sign-up-or-in/sign-up-or-in.component';
+import { ChichiNgModule }  from 'chichi-ng';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    BypassPanelComponent,
     SignUpOrInComponent
   ],
   imports: [
@@ -39,7 +38,8 @@ import { SignUpOrInComponent } from './sign-up-or-in/sign-up-or-in.component';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ChichiNgModule
   ],
   providers: [],
   bootstrap: [AppComponent]

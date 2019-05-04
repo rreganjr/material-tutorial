@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SignUpOrInComponent } from './sign-up-or-in/sign-up-or-in.component';
-import { ChichiNgModule }  from 'chichi-ng';
+import { ChichiNgModule } from 'chichi-ng';
 
 @NgModule({
   declarations: [

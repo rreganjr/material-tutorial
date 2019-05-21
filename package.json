@@ -24,6 +24,7 @@
     "@angular/router": "^7.2.14",
     "ajv": "^6.10.0",
     "ajv-keywords": "^3.4.0",
+    "chichi-ng": "^1.0.0",
     "component": "^1.1.0",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",

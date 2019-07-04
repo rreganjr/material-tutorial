@@ -67,6 +67,14 @@ cc-turning-globe {
   vertical-align: middle;
 }
 
+.gradient {
+  background-image:
+    linear-gradient(
+      to right,
+      white, #000099
+    );
+}
+
 #earth {
   height: 200px;
   width: 200px;

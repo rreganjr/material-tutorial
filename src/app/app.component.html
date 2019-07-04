@@ -5,8 +5,11 @@
       </mat-toolbar>
 
   <app-top-nav>
-      <cc-turning-globe id="earth" globeImage="https://lh5.googleusercontent.com/-kkxEx-SkRaY/VBLF4BV2lZI/AAAAAAAAKao/FnKsv7402_c/s0/earthmap.jpg" height="200px" width="200px" secondsPerRotation="30s" withShadow="true">
-      </cc-turning-globe>
+      <div class="gradient">
+          <cc-turning-globe id="earth" globeImage="https://lh5.googleusercontent.com/-kkxEx-SkRaY/VBLF4BV2lZI/AAAAAAAAKao/FnKsv7402_c/s0/earthmap.jpg" height="200px" width="200px" secondsPerRotation="30s" withShadow="true">
+          </cc-turning-globe>
+              <div style="position: absolute; top: 60px; left: 0; z-index: 5; vertical-align: middle; font-size: 60px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-style: italic; color: #fff">Global <span style="color: #000">Office Link</span></div>
+      </div>
 
       <cc-turning-globe id="earth2" globeImage="https://cdn.pixabay.com/photo/2013/07/12/12/54/world-map-146505_960_720.png" height="200px" width="200px" secondsPerRotation="10s" withShadow="true">
       </cc-turning-globe>

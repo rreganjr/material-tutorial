@@ -30,7 +30,8 @@
     "npm": "^6.9.0",
     "rxjs": "~6.5.2",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "chichi-ng": "1.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.6",
